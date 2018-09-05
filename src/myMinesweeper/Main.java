@@ -3,7 +3,7 @@ package myMinesweeper;
 public class Main {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        Gameplay game = new Gameplay(9, 10);
 
     }
 

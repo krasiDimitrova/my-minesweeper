@@ -41,10 +41,14 @@ public class Zone {
     }
 
     public void printZone() {
-        if (mine) {
-            System.out.println("*");
+        if (revealed) {
+            if (mine) {
+                System.out.print("*");
+            } else if (value == 0) {
+                System.out.print("x");
+            }
         } else {
-            System.out.println(value);
+            System.out.print(" ");
         }
     }
 }
