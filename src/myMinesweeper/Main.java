@@ -1,3 +1,4 @@
+package myMinesweeper;
 
 public class Main {
 
