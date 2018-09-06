@@ -31,11 +31,17 @@ public class Gameplay {
         } else if (c == 'u') {
             board.unFlag(x, y);
         } else {
-            endGame = (c == 'q') | board.openZone(x, y) | board.allOpened();
+            endGame = board.openZone(x, y);
         }
         board.printBoard();
         if (endGame) {
-            System.out.println("EndGame!");
+            System.out.println("Sorry you opened mine!");
+        } else if (c == 'q') {
+            endGame = true;
+            System.out.println("Goodbye!");
+        } else if (board.allOpened()) {
+            endGame = true;
+            System.out.println("You won!");
         }
     }
 

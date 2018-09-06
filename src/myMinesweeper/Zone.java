@@ -5,7 +5,7 @@ public class Zone {
     private boolean mine; // Shows if the zone is a mine
     private boolean revealed; // Show if the zone is opened by the user
     private int value; // Represents the number of surrounding mines
-    private boolean flagged;
+    private boolean flagged; // Show if the zone is flagged as a mine by the user
 
     public Zone() {
         mine = false;
