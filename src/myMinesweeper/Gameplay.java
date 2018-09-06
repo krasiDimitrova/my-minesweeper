@@ -24,9 +24,15 @@ public class Gameplay {
         int x = scanner.nextInt();
         System.out.print("Enter y: ");
         int y = scanner.nextInt();
-        System.out.print("Enter q, o, f: ");
+        System.out.print("Enter q, o, f, u: ");
         char c = scanner.next().charAt(0);
-        endGame = (c == 'q') | board.openZone(x, y) | board.allOpened();
+        if (c == 'f') {
+            board.flag(x, y);
+        } else if (c == 'u') {
+            board.unFlag(x, y);
+        } else {
+            endGame = (c == 'q') | board.openZone(x, y) | board.allOpened();
+        }
         board.printBoard();
         if (endGame) {
             System.out.println("EndGame!");

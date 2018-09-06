@@ -22,7 +22,7 @@ public class Board {
     public void setZones() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                gameboard[i][j] = new Zone(i, j);
+                gameboard[i][j] = new Zone();
             }
         }
     }
@@ -127,6 +127,14 @@ public class Board {
                 z.setRevealed();
             }
         }
+    }
+
+    public void flag(int x, int y) {
+        gameboard[x][y].setFlagged(true);
+    }
+
+    public void unFlag(int x, int y) {
+        gameboard[x][y].setFlagged(false);
     }
 
 }

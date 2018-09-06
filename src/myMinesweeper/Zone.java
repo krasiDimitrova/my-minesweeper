@@ -5,15 +5,21 @@ public class Zone {
     private boolean mine; // Shows if the zone is a mine
     private boolean revealed; // Show if the zone is opened by the user
     private int value; // Represents the number of surrounding mines
-    private int x; // X coordinate on the board
-    private int y; // Y coordinate on the board
+    private boolean flagged;
 
-    public Zone(int x, int y) {
+    public Zone() {
         mine = false;
         revealed = false;
         value = 0;
-        this.x = x;
-        this.y = y;
+        flagged = false;
+    }
+
+    public void setFlagged(boolean flag) {
+        flagged = flag;
+    }
+
+    public boolean getFlagged() {
+        return flagged;
     }
 
     public void setMine() {
@@ -50,7 +56,10 @@ public class Zone {
             } else {
                 System.out.print(value);
             }
+        } else if (flagged) {
+            System.out.print("?");
         } else {
+
             System.out.print(" ");
         }
     }
