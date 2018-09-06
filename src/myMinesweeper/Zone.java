@@ -17,6 +17,7 @@ public class Zone {
     }
 
     public void setMine() {
+        value = -1;
         mine = true;
     }
 
@@ -46,6 +47,8 @@ public class Zone {
                 System.out.print("*");
             } else if (value == 0) {
                 System.out.print("x");
+            } else {
+                System.out.print(value);
             }
         } else {
             System.out.print(" ");
