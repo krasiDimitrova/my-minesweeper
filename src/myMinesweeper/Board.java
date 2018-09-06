@@ -40,10 +40,14 @@ public class Board {
     private void setValuesToNeigbours(int x, int y) {
         int[][] nIndex = Matrix.getNeighbours(size, x, y);
         for (int i = 0; i < 8; i++) {
-            if (nIndex[0][i] == -1) {
+            int r = nIndex[0][i];
+            int c = nIndex[1][i];
+            if (r == -1) {
                 break;
             }
-            gameboard[nIndex[0][i]][nIndex[1][i]].incrementValue();
+            if (!gameboard[r][c].getMine()) {
+                gameboard[r][c].incrementValue();
+            }
         }
     }
 
@@ -113,8 +117,6 @@ public class Board {
             } else if (gameboard[r][c].getValue() > 0 && !gameboard[r][c].getRevealed()) {
                 gameboard[r][c].setRevealed();
                 opened++;
-            } else {
-                return;
             }
         }
     }

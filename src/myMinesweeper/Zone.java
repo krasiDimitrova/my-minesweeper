@@ -46,7 +46,7 @@ public class Zone {
             if (mine) {
                 System.out.print("*");
             } else if (value == 0) {
-                System.out.print("x");
+                System.out.print(".");
             } else {
                 System.out.print(value);
             }
